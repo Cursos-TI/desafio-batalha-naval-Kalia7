@@ -24,12 +24,18 @@ int main() {
     //Valores dos navios
     int navio1[TAMANHO_NAVIO] = {3, 3, 3}; // Vertical
     int navio2[TAMANHO_NAVIO] = {3, 3, 3}; // Horizontal
+    int navio3[TAMANHO_NAVIO] = {3, 3, 3}; // Diagonal
+    int navio4[TAMANHO_NAVIO] = {3, 3, 3}; // Diagonal
 
     //coordenadas navios
     int linhaNavio1 = 5;
     int colunaNavio1 = 6;
     int linhaNavio2 = 4;
     int colunaNavio2 = 5;
+    int linhaNavio3 = 0;
+    int colunaNavio3 = 0;
+    int linhaNavio4 = 0;
+    int colunaNavio4 = 9;
 
     //Posiciona navio na vertical
     for (int i = 0; i < TAMANHO_NAVIO; i++)
@@ -42,9 +48,20 @@ int main() {
     {
         tabuleiro[linhaNavio2 + i][colunaNavio2] = navio2[i];
     }
-    
-    
 
+    //Posiciona navio na diagonal
+    for (int i = 0; i < TAMANHO_NAVIO; i++)
+    {
+        tabuleiro[linhaNavio3 + i][colunaNavio3 + i] = navio3[i];
+    }
+
+    //Posiciona navio na diagonal invertida
+    for (int i = 0; i < TAMANHO_NAVIO; i++)
+    {
+        tabuleiro[linhaNavio4 + i][colunaNavio4 - i] = navio4[i];
+    }
+    
+    
     //imprime o tabuleiro
     for (int i = 0; i < 10; i++)
     {
